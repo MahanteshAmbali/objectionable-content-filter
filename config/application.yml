@@ -10,6 +10,8 @@ spring:
     enabled: false
   thymeleaf:
     cache: false
+    mode: LEGACYHTML5
+    templates_root: src/main/resources/templates/
 
 #management endpoints on a separate port
 management:

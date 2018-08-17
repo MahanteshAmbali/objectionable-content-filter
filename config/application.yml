@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+#Default Application Domain
+application:
+  domain: com.target.commerce.objectionable.content.filter.http://localhost:${server.port}
+
+spring:
+  jmx:
+    enabled: false
+  thymeleaf:
+    cache: false
+
+#management endpoints on a separate port
+management:
+  port: 8092
+  security:
+    enabled: false # management port is internal only. no need to secure it.

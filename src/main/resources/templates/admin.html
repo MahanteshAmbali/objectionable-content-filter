@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <div th:replace="fragments/header :: header-css"/>
     <style>
 .button {
@@ -54,24 +55,33 @@
         <p>
             <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]! </h1>
         </p>
+
+        <p> <h2>In this Admin page you can</h2> </p>
+
         <p>
-            <h2>In this Admin page you can</h2>
+            <h3> 1. Create/Update Objectionable Words via csv file upload</h3>
+            <p>
+                <form action="#" th:action="@{/upload}" th:object="${badWords}" method="post" enctype="multipart/form-data">
+                    <table>
+                        <tr><td> <h4> File to upload: </h4> </td><td><input type="file" name="file" /></td></tr>
+                        <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+                    </table>
+                </form>
+            </p>  <br/>
 
-        <p> <h3> 1. Create/Update Objectionable Words via csv file upload </h3> </p>
+            <h3> 2. View All. (Export to .csv file) </h3> <br/>
 
-        <p> <h3> 2. View All. (Export to .csv file) </h3> </p>
+            <h3> 3. View Many (Regex Support. --> Export to .csv file) </h3> <br/>
 
-        <p> <h3> 3. View Many (Regex Support. --> Export to .csv file) </h3> </p>
+            <h3> 4. Delete Word List. (Regex Support) </h3> <br/>
 
-        <p> <h3> 4. Delete Word List. (Regex Support) </h3> </p>
-
-        <p> <h3> 5. Delete All. </h3> </p>
+            <h3> 5. Delete All. </h3> <br/>
 
         </p>
 
         <form th:action="@{/logout}" method="post">
             <!--<input type="submit" value="Sign Out"/>-->
-            <button class="button" style="vertical-align:middle"><span>Sign Out </span></button>
+            <button class="button" style="vertical-align:middle"><span>Sign Out</span></button>
         </form>
     </div>
 

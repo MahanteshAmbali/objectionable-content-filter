@@ -6,6 +6,12 @@ application:
   domain: com.target.commerce.objectionable.content.filter.http://localhost:${server.port}
 
 spring:
+  couchbase:
+    nodes:
+     - 127.0.0.0:8091
+    bucket:
+      name: badWordsBucket
+      password: badWordsBucket
   jmx:
     enabled: false
   thymeleaf:

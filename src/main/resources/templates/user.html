@@ -1,7 +1,49 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <div th:replace="fragments/header :: header-css"/>
+    <style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
 </head>
 <body>
 
@@ -10,17 +52,41 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>User page (Needs User Credentials)</h1>
+        <p>
+            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]! </h1>
+        </p>
 
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <p> <h2>In this Admin page you can</h2> </p>
+
+        <p>
+            <h3> 1. Create/Update Objectionable Words via csv file upload</h3>
+        <p>
+            <form action="#" th:action="@{/upload}" th:object="${badWords}" method="post" enctype="multipart/form-data">
+                <table>
+                    <tr><td> <h4> File to upload: </h4> </td><td><input type="file" name="file" /></td></tr>
+                    <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+                </table>
+            </form>
+        </p>  <br/>
+
+        <p><h3> 2. View All. (Export to .csv file) </h3> </p> <br/>
+        <p>
+            <form action="#" th:action="@{/getAll}"  method="get">
+                <button class="button" style="vertical-align:middle"><span>Get All Words</span></button>
+            </form>
+            </p>  <br/>
+
+        <h3> 3. View Many (Regex Support. --> Export to .csv file) </h3> <br/>
+
         <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
+            <!--<input type="submit" value="Sign Out"/>-->
+            <button class="button" style="vertical-align:middle"><span>Sign Out</span></button>
         </form>
-
     </div>
 
 </div>
 <!-- /.container -->
+
 <div th:replace="fragments/footer :: footer"/>
 
 </body>

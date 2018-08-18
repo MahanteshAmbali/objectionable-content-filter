@@ -1,12 +1,12 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Objectionable Content Filter: Handling Form Submission</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<h1>Result</h1>
-<p/>
-<h2> File Uploaded Succesfully. </h2>
+
+<h1>Objectionable Content Filter - Get All Words</h1>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
 </body>
 </html>

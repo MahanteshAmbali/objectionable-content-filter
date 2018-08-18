@@ -70,12 +70,21 @@
             </p>  <br/>
 
             <h3> 2. View All. (Export to .csv file) </h3> <br/>
-
+            <p>
+                 <form action="#" th:action="@{/getAll}"  method="get">
+                     <button class="button" style="vertical-align:middle"><span>Get All Words</span></button>
+                 </form>
+            </p>  <br/>
             <h3> 3. View Many (Regex Support. --> Export to .csv file) </h3> <br/>
 
             <h3> 4. Delete Word List. (Regex Support) </h3> <br/>
 
-            <h3> 5. Delete All. </h3> <br/>
+            <h3> 5. Delete All. </h3>
+                <p>
+                    <form action="#" th:action="@{/deleteAll}"  method="delete">
+                        <button class="button" style="vertical-align:middle"><span>Delete All Words</span></button>
+                    </form>
+                </p>  <br/>
 
         </p>
 

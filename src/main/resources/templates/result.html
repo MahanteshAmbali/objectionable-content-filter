@@ -2,10 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<h1>Objectionable Content Filter - Get All Words</h1>
+<h1>Objectionable Content Filter - Result</h1>
 
 <div th:if="${message}">
     <h2 th:text="${message}"/>
+</div>
+
+<div>
+    <h4>Title:</h4>
+        <p th:text="${headline}" />
+    <h4>Content:</h4>
+        <p th:text="${review}" />
 </div>
 
 </body>

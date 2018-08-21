@@ -2,6 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <div th:replace="fragments/header :: header-css"/>
+    <style>
+        .error {
+        	color: #ff0000;
+        }
+
+        .errorblock {
+            color: #000;
+            background-color: #ffEEEE;
+            border: 3px solid #ff0000;
+            padding: 8px;
+            margin: 16px;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 
@@ -11,6 +25,34 @@
 
     <div class="starter-template">
         <h1>Post Your Product Review Here.!</h1>
+
+        <p>
+            <form action="#" th:action="@{/review}" method="post" >
+                <p>
+                    <h3> Add a headline</h3>
+                    <table>
+                        <tr><td>
+                            <td><input type="text" name = "headline" size="61"/></td>
+                        </td></tr>
+                    </table>
+                </p>
+                <p>
+                    <table>
+                        <tr><td>
+                            <h3> Write your review</h3>
+                            <textarea rows="10" cols="60" name = "review">
+
+                            </textarea>
+                        </td></tr>
+                        <tr>
+                            <td colspan = "2">
+                                <input type = "submit" value = "Submit"/>
+                            </td>
+                        </tr>
+                    </table>
+                </p>
+            </form>
+        </p>
     </div>
 
 </div>

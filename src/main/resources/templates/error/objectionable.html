@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <div th:replace="fragments/header :: header-css"/>
     <title>Objectionable Content Filter -- Error Page</title>
 </head>
 <body>
+
+    <div th:replace="fragments/header :: header"/>
+
     <h1>Objectionable Content Filter - Result</h1>
 
-    <div th:if="${message}">
-        <h2 th:text="${message}"/>
-    </div>
-
     <div>
+        <h4>Message: </h4>
+            <p th:text="${message}" />
         <h4>Title:</h4>
-        <p th:text="${headline}" />
+            <p th:text="${headline}" />
         <h4>Content:</h4>
-        <p th:text="${review}" />
+            <p th:text="${review}" />
     </div>
 </body>
 </html>

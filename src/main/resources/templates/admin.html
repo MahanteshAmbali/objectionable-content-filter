@@ -77,7 +77,18 @@
             </p>  <br/>
             <h3> 3. View Many (Regex Support. --> Export to .csv file) </h3> <br/>
 
-            <h3> 4. Delete Word List. (Regex Support) </h3> <br/>
+            <h3> 4. Delete Word </h3> <br/>
+            <form action="#" th:action="@{/deleteWord}" method="delete" >
+                <p>
+                <table>
+                    <tr><td>
+                        <td><input type="text" name = "headline" size="61"/></td>
+                        </td></tr>
+                </table>
+                </p>
+
+                <input type = "submit" value = "Submit"/>
+            </form>
 
             <h3> 5. Delete All. </h3>
                 <p>

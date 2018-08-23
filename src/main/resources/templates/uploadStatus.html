@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <div th:replace="fragments/header :: header-css"/>
+    <style>
+        .error {
+        	color: #ff0000;
+        }
+
+        .errorblock {
+            color: #000;
+            background-color: #ffEEEE;
+            border: 3px solid #ff0000;
+            padding: 8px;
+            margin: 16px;
+        }
+        input {
+           padding-top: 0;
+           padding-left: 0;
+           line-height: 1em;
+        }
+    </style>
+</head>
 <body>
+    <div th:replace="fragments/header :: header"/>
 
 <h1>Objectionable Content Filter - Upload Status</h1>
 
@@ -8,5 +31,6 @@
     <h2 th:text="${message}"/>
 </div>
 
+    <div th:replace="fragments/footer :: footer"/>
 </body>
 </html>
